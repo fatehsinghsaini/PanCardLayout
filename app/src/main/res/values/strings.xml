@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PanCardLayout</string>
+
+    <string name="prompt_email">Pen Number</string>
+    <string name="prompt_dateofbirth">Birth Date</string>
+    <string name="action_sign_in">Next</string>
+    <string name="next">Next</string>
+    <string name="welcome">"Successfully Validate Pan Number !"</string>
+    <string name="invalid_panno">Not a valid Pan Number</string>
+    <string name="invalid_dob">Birth must be >8 characters</string>
+    <string name="validation_failed">"Validation failed"</string>
+    <string name="top_title">First of the few steps to set \n you up with a Bank Account</string>
+    <string name="pan_msg">Providing PAN  and Date of Birth help us find and fetch your KYC details from a centrial registry the goverment of India.</string>
+</resources>
