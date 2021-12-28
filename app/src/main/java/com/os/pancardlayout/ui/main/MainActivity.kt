@@ -76,19 +76,19 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         birthDate.apply {
 
             setOnClickListener {
-                val now: Calendar = Calendar.getInstance()
-                val dpd = DatePickerDialog.newInstance(
-                    this@MainActivity,
-                    now.get(Calendar.YEAR),  // Initial year selection
-                    now.get(Calendar.MONTH),  // Initial month selection
-                    now.get(Calendar.DAY_OF_MONTH) // Inital day selection
-                )
+                val now = Calendar.getInstance()
+                now.get(Calendar.YEAR)
+                now.get(Calendar.MONTH)
+                now.get(Calendar.DAY_OF_MONTH)
+
+                val dpd = DatePickerDialog.newInstance(this@MainActivity,now)
+                dpd.maxDate = now
                 dpd.show(supportFragmentManager, "Datepickerdialog")
             }
 
              next?.setOnClickListener {
                 loading.visibility = View.VISIBLE
-                mainViewModel.main(panNumber.text.toString(), birthDate.text.toString())
+                mainViewModel.nextFun(panNumber.text.toString(), birthDate.text.toString())
             }
         }
     }
