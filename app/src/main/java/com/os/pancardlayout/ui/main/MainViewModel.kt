@@ -18,16 +18,17 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
     private val _mainResult = MutableLiveData<NextResult>()
     val mainResult: LiveData<NextResult> = _mainResult
 
-    fun main(panNumber: String, birthDate: String) {
-        // can be launched in a separate asynchronous job
-        val result = mainRepository.next(panNumber, birthDate)
+     fun nextFun(panNumber: String, birthDate: String) {
+            // can be launched in a separate asynchronous job
+            val result = mainRepository.next(panNumber, birthDate)
 
-        if (result is Result.Success) {
-            _mainResult.value =
-                NextResult(success = SavedView(displayName = result.data.displayName))
-        } else {
-            _mainResult.value = NextResult(error = R.string.validation_failed)
-        }
+            if (result is Result.Success) {
+                _mainResult.value =
+                    NextResult(success = SavedView(displayName = result.data.displayName))
+            } else {
+                _mainResult.value = NextResult(error = R.string.validation_failed)
+            }
+
     }
 
     fun nextDataChanged(panNumber: String, dob: String) {
